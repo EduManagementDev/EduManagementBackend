@@ -33,7 +33,7 @@ public class StudentEntity {
     @TableField(CLASS_ID)
     private Integer classId;
 
-    @Length(min = 12, max = 12, message = "学号长度必须为12位")
+    @Length(min = 9, max = 9, message = "学号长度必须为12位")
     @TableField(NUMBER)
     private String number;
 

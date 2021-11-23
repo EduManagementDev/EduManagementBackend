@@ -51,7 +51,6 @@ public class CourseSelectService extends BaseService {
 
     public ResultVO create(Integer courseId) {
         Integer studentId = getUserId();
-
         if (!optionManager.getAllowStudentSelect()) {
             return failedResult("现在不是选课时间!");
         }
@@ -72,14 +71,16 @@ public class CourseSelectService extends BaseService {
         if (manager.getStudentCourseByCourseIdAndStudentId(courseId, studentId) != null) {
             return failedResult("学生已选修此课程!");
         }
+        System.out.println("11122");
         if (!manager.getStudentGradeById(student.getId()).equals(course.getGrade())) {
             return failedResult("学生与课程不在同一年级");
         }
+
         String timePart = splitTimePart(course.getTime());
         if (manager.countStudentCourseSelectedByTimePart(studentId, timePart) > 0) {
             return failedResult("上课时间冲突!");
         }
-
+        System.out.println("111222");
         StudentCourseEntity studentCourse = new StudentCourseEntity();
         studentCourse.setCourseId(courseId);
         studentCourse.setStudentId(studentId);

@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.Range;
 import javax.validation.constraints.NotNull;
 
 
-@TableName("student_course")
+@TableName("student_course_relation")
 @Data
 public class StudentCourseEntity {
     public static final String ID = "sc_id";

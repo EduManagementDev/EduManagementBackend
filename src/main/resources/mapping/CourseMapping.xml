@@ -50,7 +50,7 @@
         AND course_grade = #{grade}
         AND course_id NOT IN (
             SELECT sc_course_id
-            FROM student_course
+            FROM student_course_relation
             WHERE sc_student_id = #{studentId}
         )
         <if test="courseName != null and courseName != ''">
@@ -70,7 +70,7 @@
         AND course_grade = #{grade}
         AND course_id NOT IN (
         SELECT sc_course_id
-        FROM student_course
+        FROM student_course_relation
         WHERE sc_student_id = #{studentId}
         )
         <if test="courseName != null and courseName != ''">

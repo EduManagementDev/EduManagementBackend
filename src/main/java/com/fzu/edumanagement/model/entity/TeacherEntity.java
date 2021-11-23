@@ -28,7 +28,7 @@ public class TeacherEntity {
     @TableField(DEPARTMENT_ID)
     private Integer departmentId;
 
-    @Length(min = 12, max = 12, message = "工号长度必须为12位")
+    @Length(min = 6, max = 6, message = "工号长度必须为6位")
     @TableField(NUMBER)
     private String number;
 
